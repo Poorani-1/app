@@ -1,0 +1,84 @@
+.navbar {
+    background-color: #061630;
+    width: 100%;
+    position: fixed;
+    padding: 25px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: cursive;
+    z-index: 1000;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: #fff;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.navigation p {
+    margin: 0 20px;
+    color: #e0e0e0;
+    font-size: 18px;
+    font-weight: 800;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navigation p::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #61dafb;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.navigation p:hover {
+    color: #61dafb;
+}
+
+.navigation p:hover::before {
+    visibility: visible;
+    width: 100%;
+}
+
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .navigation {
+        display: none; 
+        flex-direction: column; 
+        width: 100%;
+        background-color: #061630;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        text-align: center;
+        z-index: 999;
+    }
+
+    .navigation.open {
+        display: flex; 
+    }
+    .navigation p {
+        margin: 15px 0; 
+        width: 100%; 
+        text-align: center;
+    }
+}
